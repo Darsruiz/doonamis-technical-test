@@ -1,4 +1,6 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using doonamis_technical_test.Models;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -22,7 +24,16 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
 
-app.MapFallbackToFile("index.html");;
+app.MapFallbackToFile("index.html"); ;
 
 app.Run();
 
+namespace doonamis_technical_test
+{
+    public class Mars : MarsModel
+    {
+        public Mars(Coordinates coordinates) : base(coordinates)
+        {
+        }
+    }
+}

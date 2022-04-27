@@ -4,15 +4,19 @@ namespace doonamis_technical_test.Interfaces
 {
     public interface IMarsService
     {
-        public Task<HashSet<RoverModel>> GetRoverPosition();
+        public HashSet<Coordinates> GetRoversPosition();
 
-        public Task<Coordinates> GetRoverPositionByName(string name);
+        public RoverModel GetRoverByName(string name);
 
-        public Task<bool> CheckBoundaries();
+        public Coordinates GetBoundaries();
+        public HashSet<Coordinates> Get3DBoundaries();
 
-        public Task<MarsModel> GetMars();
+        public MarsModel GetMars();
 
-        public Task<MarsModel> SetMarsBoundaries();
+        public MarsModel SetMarsBoundaries(double x, double y);
+        public MarsModel SetMarsBoundaries(double x, double y, double z);
+        public MarsModel SetMarsBoundaries(Coordinates coordinates);
+        public MarsModel SetMarsBoundaries(Coordinates coordinates2D, Coordinates coordinates3D);
 
     }
 }
