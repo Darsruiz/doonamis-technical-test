@@ -30,10 +30,8 @@ app.Run();
 
 namespace doonamis_technical_test
 {
-    public class Mars : MarsModel
+    public static class Globals
     {
-        public Mars(Coordinates coordinates) : base(coordinates)
-        {
-        }
+        public static MarsModel Mars { get; set; } = new MarsModel();
     }
 }

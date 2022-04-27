@@ -5,9 +5,7 @@
 		North,
 		South,
 		East,
-		West,
-		Up,
-		Down
+		West
 	}
 }
 
