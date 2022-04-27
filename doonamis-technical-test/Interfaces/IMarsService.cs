@@ -6,17 +6,16 @@ namespace doonamis_technical_test.Interfaces
     {
         public HashSet<Coordinates> GetRoversPosition();
 
-        public RoverModel GetRoverByName(string name);
+        public RoverModel? GetRoverByName(string name);
 
         public Coordinates GetBoundaries();
-        public HashSet<Coordinates> Get3DBoundaries();
+        public Coordinates Get3DBoundaries();
 
         public MarsModel GetMars();
 
-        public MarsModel SetMarsBoundaries(double x, double y);
-        public MarsModel SetMarsBoundaries(double x, double y, double z);
         public MarsModel SetMarsBoundaries(Coordinates coordinates);
-        public MarsModel SetMarsBoundaries(Coordinates coordinates2D, Coordinates coordinates3D);
+        public MarsModel SetMars3DBoundaries(Coordinates coordinates3D);
+        public MarsModel ResetMars();
 
     }
 }

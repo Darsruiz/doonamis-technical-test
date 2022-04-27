@@ -6,12 +6,16 @@ using doonamis_technical_test.Models;
 
 namespace doonamis_technical_test.Services
 {
-    [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
     public class MarsService : IMarsService
     {
         private MarsModel marsModel;
 
-        public MarsService(Mars _mars)
+        public MarsService()
+        {
+            marsModel = Globals.Mars;
+        }
+
+        public MarsService(MarsModel _mars)
         {
             marsModel = _mars;
         }
@@ -28,13 +32,9 @@ namespace doonamis_technical_test.Services
         {
             return marsModel.Max2DCoordinates;
         }
-        public HashSet<Coordinates> Get3DBoundaries()
+        public Coordinates Get3DBoundaries()
         {
-            return new HashSet<Coordinates>
-            {
-                marsModel.Max2DCoordinates,
-                marsModel.Max3DCoordinates ?? new Coordinates()
-            };
+            return marsModel.Max3DCoordinates;
         }
 
         public MarsModel GetMars()
@@ -47,7 +47,7 @@ namespace doonamis_technical_test.Services
             return marsModel.Rovers;
         }
 
-        public RoverModel GetRoverByName(string name)
+        public RoverModel? GetRoverByName(string name)
         {
             RoverModel? namedRover = marsModel
                 .Rovers
@@ -55,47 +55,23 @@ namespace doonamis_technical_test.Services
             return namedRover;
         }
 
-        public MarsModel SetMarsBoundaries(double x, double y)
-        {
-            Coordinates coordinate = new()
-            {
-                X = x,
-                Y = y,
-                Z = 0
-            };
-
-            marsModel.Max2DCoordinates = coordinate;
-            return marsModel;
-        }
-
-        public MarsModel SetMarsBoundaries(double x, double y, double z)
-        {
-            Coordinates coordinate = new()
-            {
-                X = x,
-                Y = y,
-                Z = z
-            };
-
-            marsModel.Max2DCoordinates = coordinate;
-            return marsModel;
-        }
         public MarsModel SetMarsBoundaries(Coordinates coordinates)
         {
             marsModel.Max2DCoordinates = coordinates;
             return marsModel;
         }
 
-        public MarsModel SetMarsBoundaries(Coordinates coordinates2D, Coordinates coordinates3D)
+        public MarsModel SetMars3DBoundaries(Coordinates coordinates3D)
         {
-            marsModel.Max2DCoordinates = coordinates2D;
+            marsModel.Is3D = true;
             marsModel.Max3DCoordinates = coordinates3D;
             return marsModel;
         }
 
-        private string GetDebuggerDisplay()
+        public MarsModel ResetMars()
         {
-            return ToString();
+            marsModel = new();
+            return marsModel;
         }
     }
 }
