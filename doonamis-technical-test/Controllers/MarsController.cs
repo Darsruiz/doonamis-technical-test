@@ -8,8 +8,6 @@ namespace doonamis_technical_test.Controllers;
 [Route("[controller]/[action]")]
 public class MarsController : ControllerBase
 {
-    MarsModel _mars = Globals.Mars;
-
     private readonly ILogger<MarsController> _logger;
 
     public MarsController(ILogger<MarsController> logger)
@@ -22,7 +20,7 @@ public class MarsController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             MarsModel model = s.GetMars();
             return Ok(model);
         }
@@ -36,7 +34,7 @@ public class MarsController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             var coordinates = s.GetBoundaries();
             return coordinates is not null ? Ok(coordinates) : NotFound();
         }
@@ -50,7 +48,7 @@ public class MarsController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             Coordinates coordinates = s.Get3DBoundaries();
             return coordinates is not null ? Ok(coordinates) : NotFound();
         }
@@ -65,7 +63,7 @@ public class MarsController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             Coordinates coordinate = new(x, y, z);
             MarsModel mars = s.SetMarsBoundaries(coordinate);
             return mars is not null ? Ok(mars) : NotFound();
@@ -80,7 +78,7 @@ public class MarsController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             Coordinates coordinate = new(x, y, z);
 
             MarsModel mars = s.SetMars3DBoundaries(coordinate);
@@ -96,7 +94,7 @@ public class MarsController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             MarsModel marsModel = s.ResetMars();
             return Ok(marsModel);
         }

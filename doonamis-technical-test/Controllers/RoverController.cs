@@ -8,8 +8,6 @@ namespace doonamis_technical_test.Controllers;
 [Route("[controller]/[action]")]
 public class RoverController : ControllerBase
 {
-    MarsModel _mars = Globals.Mars;
-
     private readonly ILogger<RoverController> _logger;
 
     public RoverController(ILogger<RoverController> logger)
@@ -21,7 +19,7 @@ public class RoverController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             HashSet<RoverModel> rover = s.GetRover();
             return rover is not null ? Ok(rover) : NotFound();
         }
@@ -35,7 +33,7 @@ public class RoverController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             RoverModel? rover = s.GetRoverByName(name);
             return rover is not null ? Ok(rover) : NotFound();
         }
@@ -49,7 +47,7 @@ public class RoverController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             HashSet<Coordinates> coordinates = s.GetRoversPosition();
             return coordinates.Count > 0 ? Ok(coordinates) : NotFound();
         }
@@ -63,7 +61,7 @@ public class RoverController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             RoverModel? rover = s.GetRoverByName(name);
             if (rover is not null)
             {
@@ -82,7 +80,7 @@ public class RoverController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             RoverModel? rover = s.GetRoverByName(name);
             if (rover is not null)
             {
@@ -101,7 +99,7 @@ public class RoverController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             RoverModel? rover = s.GetRoverByName(name);
             if (rover is not null)
             {
@@ -120,7 +118,7 @@ public class RoverController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             RoverModel? rover = s.GetRoverByName(name);
             if (rover is not null)
             {
@@ -140,7 +138,7 @@ public class RoverController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             RoverModel? rover = s.GetRoverByName(name);
             if (rover is not null)
             {
@@ -158,7 +156,7 @@ public class RoverController : ControllerBase
     {
         try
         {
-            MarsService s = new(_mars);
+            MarsService s = new();
             RoverModel? rover = s.GetRoverByName(name);
             if (rover is not null)
             {

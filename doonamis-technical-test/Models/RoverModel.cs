@@ -105,7 +105,29 @@
                 {
                     IsOutOfBounds = true;
                 }
+                if (Globals.Mars.Is3D || Coordinates.X == Globals.Mars.Max2DCoordinates.Z)
+                {
+                    IsOutOfBounds = true;
+                }
+            }
+            return this;
+        }
 
+        public RoverModel MoveUpDown(char direction)
+        {
+            if (!IsOutOfBounds)
+            {
+                switch (direction)
+                {
+                    case 'U':
+                        Coordinates.Z++;
+                        break;
+                    case 'D':
+                        Coordinates.Z--;
+                        break;
+                    default:
+                        break;
+                }
             }
             return this;
         }
@@ -132,6 +154,10 @@
                             break;
                         case 'F':
                             MoveForward();
+                            roverMovements.MovementsDone.Add(mov);
+                            break;
+                        case 'U':
+                        case 'D':
                             roverMovements.MovementsDone.Add(mov);
                             break;
                         default:

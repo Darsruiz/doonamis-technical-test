@@ -15,11 +15,6 @@ namespace doonamis_technical_test.Services
             marsModel = Globals.Mars;
         }
 
-        public MarsService(MarsModel _mars)
-        {
-            marsModel = _mars;
-        }
-
         public HashSet<Coordinates> GetRoversPosition()
         {
             HashSet <Coordinates> coordinatesList = marsModel.Rovers
@@ -70,7 +65,8 @@ namespace doonamis_technical_test.Services
 
         public MarsModel ResetMars()
         {
-            marsModel = new();
+            Globals.Mars = new();
+            marsModel = Globals.Mars;
             return marsModel;
         }
     }
