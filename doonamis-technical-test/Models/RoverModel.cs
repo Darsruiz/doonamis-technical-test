@@ -6,9 +6,10 @@
 
         public RoverModel()
         {
-            Name = "FirstRover";
-            Coordinates = new Coordinates();
-            Orientation = OrientationEnum.North;
+            Name = $"Rover{Globals.RoverNumber}";
+            Coordinates = new Coordinates(1, 1, 0);
+            Orientation = OrientationEnum.East;
+            Globals.RoverNumber++;
         }
 
         public RoverModel(string name)
@@ -93,11 +94,11 @@
             {
                 _ = Orientation switch
                 {
-                    OrientationEnum.North => Coordinates.X++,
-                    OrientationEnum.South => Coordinates.X--,
-                    OrientationEnum.East => Coordinates.Y++,
-                    OrientationEnum.West => Coordinates.Y--,
-                    _ => throw new NotImplementedException()
+                    OrientationEnum.North => Coordinates.Y++,
+                    OrientationEnum.South => Coordinates.Y--,
+                    OrientationEnum.East => Coordinates.X++,
+                    OrientationEnum.West => Coordinates.X--,
+                    _ => -1
                 };
 
                 if (Coordinates.X == Globals.Mars.Max2DCoordinates.X || Coordinates.Y == Globals.Mars.Max2DCoordinates.Y)
@@ -118,6 +119,7 @@
                 if (IsOutOfBounds)
                 {
                     roverMovements.BlockedMovements.Add(mov);
+                    roverMovements.MovementsDone.Add('X');
                 }
                 else
                 {

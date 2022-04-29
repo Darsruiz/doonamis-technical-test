@@ -144,8 +144,8 @@ public class RoverController : ControllerBase
             RoverModel? rover = s.GetRoverByName(name);
             if (rover is not null)
             {
-                rover.GetCoordinates();
-                return Ok(rover);
+                Coordinates coordinates = rover.GetCoordinates();
+                return Ok(coordinates);
             }
             return NotFound();
         }

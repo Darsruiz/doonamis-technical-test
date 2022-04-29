@@ -33,5 +33,6 @@ namespace doonamis_technical_test
     public static class Globals
     {
         public static MarsModel Mars { get; set; } = new MarsModel();
+        public static int RoverNumber { get; set; }
     }
 }
