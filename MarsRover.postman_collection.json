@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "95e45ef3-3dd7-48cd-a5b5-c6eff4c3eac4",
+		"name": "MarsRover",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Rover",
+			"item": [
+				{
+					"name": "GetRover",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Rover/GetRover",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Rover",
+								"GetRover"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCoordinates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Rover/GetCoordinates?name=Rover0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Rover",
+								"GetCoordinates"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Rover0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ResetCoordinates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Rover/ResetCoordinates?name=Rover0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Rover",
+								"ResetCoordinates"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Rover0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeOrientation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Rover/ChangeOrientation?name=Rover0&orientation=4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Rover",
+								"ChangeOrientation"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Rover0"
+								},
+								{
+									"key": "orientation",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOrientation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Rover/GetOrientation?name=Rover0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Rover",
+								"GetOrientation"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Rover0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MoveForward",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Rover/MoveForward?name=Rover0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Rover",
+								"MoveForward"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Rover0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HandleMovement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Rover/HandleRoverMovement?name=Rover0&movements=53",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Rover",
+								"HandleRoverMovement"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Rover0"
+								},
+								{
+									"key": "movements",
+									"value": "53"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoversPosition",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Rover/GetRoversPosition",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Rover",
+								"GetRoversPosition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoverByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Rover/GetRoverByName?name=Rover0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Rover",
+								"GetRoverByName"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Rover0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mars",
+			"item": [
+				{
+					"name": "GetMars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Mars/GetMars",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Mars",
+								"GetMars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ResetMars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Mars/ResetMars",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Mars",
+								"ResetMars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBoundaries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Mars/GetBoundaries",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Mars",
+								"GetBoundaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get3DBoundaries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Mars/Get3DBoundaries",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Mars",
+								"Get3DBoundaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SetMarsBoundaries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Mars/SetMarsBoundaries?x=5&y=15",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Mars",
+								"SetMarsBoundaries"
+							],
+							"query": [
+								{
+									"key": "x",
+									"value": "5"
+								},
+								{
+									"key": "y",
+									"value": "15"
+								},
+								{
+									"key": "",
+									"value": "12",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SetMars3DBoundaries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7052/Mars/SetMars3DBoundaries?x=35&y=14&z=17",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7052",
+							"path": [
+								"Mars",
+								"SetMars3DBoundaries"
+							],
+							"query": [
+								{
+									"key": "x",
+									"value": "35"
+								},
+								{
+									"key": "y",
+									"value": "14"
+								},
+								{
+									"key": "z",
+									"value": "17"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
