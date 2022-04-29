@@ -1,0 +1,48 @@
+<h1 id="tableLabel">Doonamis Test</h1>
+
+<p *ngIf="!Mars"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="Mars">
+  <thead>
+    <tr>
+      <th>Base Coordinates</th>
+      <th>Max Coordinates</th>
+      <th>Rovers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ Mars.BaseCoordinates}}</td>
+      <td>{{ Mars.Max2DCoordinates}}</td>
+      <td>
+        <tr *ngFor="let rover of Mars.Rovers" >
+          <td>{{rover.Name}}</td>
+          <td>{{rover.Orientation}}</td>
+          <td>{{rover.Coordinates}}</td>
+          <td>{{rover.IsOutOfBounds}}</td>
+        </tr>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="mb-3">
+  <label for="x" class="form-label">X Coordinates</label>
+<input class="form-control" type="number" name="x" id="x" placeholder="" [(ngModel)]="MarsBoundaries.x" aria-describedby="helpIdX">
+<small id="helpIdX" class="text-muted">Mars Limits on the X Axis</small>
+</div>
+<div class="mb-3">
+  <label for="y" class="form-label">Y Coordinates</label>
+<input class="form-control" type="number" name="y" id="y" placeholder="" [(ngModel)]="MarsBoundaries.y" aria-describedby="helpIdY">
+<small id="helpIdY" class="text-muted">Mars Limits on the Y Axis</small>
+</div>
+<div class="mb-3">
+  <button class="btn btn-success" (click)="SetMarsBoundaries()" >Define Boundaries</button>
+</div>
+
+
+
+
+
+
+
