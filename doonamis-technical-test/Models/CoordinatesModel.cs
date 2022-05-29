@@ -1,0 +1,23 @@
+﻿namespace doonamis_technical_test.Models
+{
+    public class Coordinates
+	{
+        public Coordinates() {
+            X = 0;
+            Y = 0;
+            Z = 0;
+        }
+
+        public Coordinates(double x, double y, double z)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+        }
+
+        public double X { get; set; }
+		public double Y { get; set; }
+		public double Z { get; set; }
+	}
+}
+
